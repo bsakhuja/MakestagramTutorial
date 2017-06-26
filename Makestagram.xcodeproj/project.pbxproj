@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		060FEC4B1F01A0E4006826D1 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060FEC4A1F01A0E4006826D1 /* CreateUsernameViewController.swift */; };
-		060FEC4D1F01B02F006826D1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060FEC4C1F01B02F006826D1 /* UserService.swift */; };
 		0616473F1F01921800F75C0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616473E1F01921800F75C0C /* User.swift */; };
 		064955B21EFD798400168D54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 064955B11EFD798400168D54 /* GoogleService-Info.plist */; };
 		064955B41EFD79F500168D54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064955B31EFD79F500168D54 /* ViewController.swift */; };
@@ -16,6 +15,7 @@
 		064955B81EFD7A0100168D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064955B61EFD7A0100168D54 /* Main.storyboard */; };
 		064955BF1EFD7C9F00168D54 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064955BE1EFD7C9F00168D54 /* Login.storyboard */; };
 		064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064955C01EFD7CF100168D54 /* LoginViewController.swift */; };
+		0670A8071F01BAC1003494CB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A8061F01BAC1003494CB /* UserService.swift */; };
 		0686DD331EFD77120027C234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686DD321EFD77120027C234 /* AppDelegate.swift */; };
 		0686DD3A1EFD77120027C234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0686DD391EFD77120027C234 /* Assets.xcassets */; };
 		473C51A0185262ED9DD4E47F /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320E1BB5B72748A9CEF4F23B /* Pods_Makestagram.framework */; };
@@ -23,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		060FEC4A1F01A0E4006826D1 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateUsernameViewController.swift; path = Controllers/CreateUsernameViewController.swift; sourceTree = "<group>"; };
-		060FEC4C1F01B02F006826D1 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		0616473E1F01921800F75C0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		064955B11EFD798400168D54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		064955B31EFD79F500168D54 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		064955B91EFD7A0B00168D54 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
 		064955BE1EFD7C9F00168D54 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		064955C01EFD7CF100168D54 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		0670A8061F01BAC1003494CB /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		0686DD2F1EFD77120027C234 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0686DD321EFD77120027C234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0686DD391EFD77120027C234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		060FEC4E1F01B032006826D1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				060FEC4C1F01B02F006826D1 /* UserService.swift */,
+				0670A8061F01BAC1003494CB /* UserService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -276,7 +276,7 @@
 			files = (
 				0616473F1F01921800F75C0C /* User.swift in Sources */,
 				064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */,
-				060FEC4D1F01B02F006826D1 /* UserService.swift in Sources */,
+				0670A8071F01BAC1003494CB /* UserService.swift in Sources */,
 				064955B41EFD79F500168D54 /* ViewController.swift in Sources */,
 				060FEC4B1F01A0E4006826D1 /* CreateUsernameViewController.swift in Sources */,
 				0686DD331EFD77120027C234 /* AppDelegate.swift in Sources */,
