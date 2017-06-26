@@ -16,6 +16,8 @@
 		064955BF1EFD7C9F00168D54 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064955BE1EFD7C9F00168D54 /* Login.storyboard */; };
 		064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064955C01EFD7CF100168D54 /* LoginViewController.swift */; };
 		0670A8071F01BAC1003494CB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A8061F01BAC1003494CB /* UserService.swift */; };
+		0670A8091F01D42A003494CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A8081F01D42A003494CB /* Constants.swift */; };
+		0670A80B1F01D4C0003494CB /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A80A1F01D4C0003494CB /* Storyboard+Utility.swift */; };
 		0686DD331EFD77120027C234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686DD321EFD77120027C234 /* AppDelegate.swift */; };
 		0686DD3A1EFD77120027C234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0686DD391EFD77120027C234 /* Assets.xcassets */; };
 		473C51A0185262ED9DD4E47F /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320E1BB5B72748A9CEF4F23B /* Pods_Makestagram.framework */; };
@@ -32,6 +34,8 @@
 		064955BE1EFD7C9F00168D54 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		064955C01EFD7CF100168D54 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		0670A8061F01BAC1003494CB /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
+		0670A8081F01D42A003494CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Supporting/Constants.swift; sourceTree = "<group>"; };
+		0670A80A1F01D4C0003494CB /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		0686DD2F1EFD77120027C234 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0686DD321EFD77120027C234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0686DD391EFD77120027C234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		064955BB1EFD7B5400168D54 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0670A8081F01D42A003494CB /* Constants.swift */,
 				064955B91EFD7A0B00168D54 /* Info.plist */,
 				064955B51EFD7A0100168D54 /* LaunchScreen.storyboard */,
 				064955B11EFD798400168D54 /* GoogleService-Info.plist */,
@@ -88,6 +93,14 @@
 				060FEC4A1F01A0E4006826D1 /* CreateUsernameViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0670A80C1F01D4C6003494CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0670A80A1F01D4C0003494CB /* Storyboard+Utility.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		0686DD261EFD77120027C234 = {
@@ -118,6 +131,7 @@
 				064955BC1EFD7B5E00168D54 /* Storyboards */,
 				0686DD391EFD77120027C234 /* Assets.xcassets */,
 				06B88BBC1F0182B300EBBB90 /* Models */,
+				0670A80C1F01D4C6003494CB /* Extensions */,
 			);
 			path = Makestagram;
 			sourceTree = "<group>";
@@ -277,7 +291,9 @@
 				0616473F1F01921800F75C0C /* User.swift in Sources */,
 				064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */,
 				0670A8071F01BAC1003494CB /* UserService.swift in Sources */,
+				0670A80B1F01D4C0003494CB /* Storyboard+Utility.swift in Sources */,
 				064955B41EFD79F500168D54 /* ViewController.swift in Sources */,
+				0670A8091F01D42A003494CB /* Constants.swift in Sources */,
 				060FEC4B1F01A0E4006826D1 /* CreateUsernameViewController.swift in Sources */,
 				0686DD331EFD77120027C234 /* AppDelegate.swift in Sources */,
 			);
