@@ -59,12 +59,16 @@ extension LoginViewController: FUIAuthDelegate {
         
         // We read from the path we created and pass an event closure to handle the data (snapshot) is passed back from the database.
         userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-            if let user = User(snapshot: snapshot) {
-                print("User already exists, \(user.username).")
+            let storyboard = UIStoryboard(name: "Main", bundle: .main)
+            
+            if let initialViewController = storyboard.instantiateInitialViewController() {
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
             } else {
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
         })
     }
 }
+
 

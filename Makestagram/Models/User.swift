@@ -31,5 +31,22 @@ class User: NSObject {
         self.username = username
         super.init()
     }
+    
+    
+    // MARK: - Singleton
+    private static var _current: User?
+    
+    static var current: User {
+        guard let currentUser = _current else {
+            fatalError("Error: current user doesn't exist")
+        }
+        
+        return currentUser
+    }
+    
+    // MARK: - Class Methods
+    static func setCurrent(_ user: User) {
+        _current = user
+    }
+    
 }
-
