@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0616473F1F01921800F75C0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0616473E1F01921800F75C0C /* User.swift */; };
 		064955B21EFD798400168D54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 064955B11EFD798400168D54 /* GoogleService-Info.plist */; };
 		064955B41EFD79F500168D54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064955B31EFD79F500168D54 /* ViewController.swift */; };
 		064955B71EFD7A0100168D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064955B51EFD7A0100168D54 /* LaunchScreen.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0616473E1F01921800F75C0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		064955B11EFD798400168D54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		064955B31EFD79F500168D54 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		064955B51EFD7A0100168D54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,8 +103,17 @@
 				064955BD1EFD7B6E00168D54 /* View Controllers */,
 				064955BC1EFD7B5E00168D54 /* Storyboards */,
 				0686DD391EFD77120027C234 /* Assets.xcassets */,
+				06B88BBC1F0182B300EBBB90 /* Models */,
 			);
 			path = Makestagram;
+			sourceTree = "<group>";
+		};
+		06B88BBC1F0182B300EBBB90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0616473E1F01921800F75C0C /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9288B22B3D2751369D7E6292 /* Pods */ = {
@@ -249,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0616473F1F01921800F75C0C /* User.swift in Sources */,
 				064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */,
 				064955B41EFD79F500168D54 /* ViewController.swift in Sources */,
 				0686DD331EFD77120027C234 /* AppDelegate.swift in Sources */,
@@ -374,7 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.briansakhuja.Makestagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -389,7 +401,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.briansakhuja.Makestagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
