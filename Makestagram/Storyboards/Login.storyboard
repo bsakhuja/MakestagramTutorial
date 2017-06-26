@@ -61,6 +61,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Register or Log In"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Tmu-i6-RLv" eventType="touchUpInside" id="rxL-rS-mWT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,6 +76,9 @@
                             <constraint firstItem="e7R-Ie-oUH" firstAttribute="top" secondItem="bvs-fh-cgd" secondAttribute="bottom" id="g5u-d7-dNJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="RTF-FL-dfr" id="eyn-31-o33"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alk-NO-0lV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

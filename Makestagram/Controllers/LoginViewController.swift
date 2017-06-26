@@ -12,6 +12,10 @@ import FirebaseAuthUI
 
 class LoginViewController: UIViewController {
     
+    // MARK: - Properties
+    @IBOutlet weak var loginButton: UIButton!
+    
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,15 +27,23 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - IBActions
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        // 1
+        guard let authUI = FUIAuth.defaultAuthUI()
+            else { return }
+        
+        // 2
+        authUI.delegate = self
+        
+        // 3
+        let authViewController = authUI.authViewController()
+        present(authViewController, animated: true)
     }
-    */
+}
 
+extension LoginViewController: FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        print("handle user signup / login")
+    }
 }
