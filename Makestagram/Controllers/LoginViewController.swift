@@ -53,18 +53,15 @@ extension LoginViewController: FUIAuthDelegate {
         }
         
         // First we check that the FIRUser returned from authentication is not nil by unwrapping it. We guard this statement, because we cannot proceed further if the user is nil. We need the FIRUser object's uid property to build the relative path for the user at /users/#{uid}.
-        guard let user = user
-            else { return }
+        guard let user = user else { return }
         
         // We construct a relative path to the reference of the user's information in our database
         let userRef = Database.database().reference().child("users").child(user.uid)
         
         // We read from the path we created and pass an event closure to handle the data (snapshot) is passed back from the database.
-        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            // let user = User(snapshot: snapshot)
-            
+        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
             if let user = User(snapshot: snapshot) {
-                print("Welcome back, \(user.username).")
+                print("User already exists, \(user.username).")
             } else {
                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
             }
