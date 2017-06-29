@@ -41,6 +41,7 @@ struct UserService {
     }
     
     // fetch and return all of our posts from Firebase from a given user
+    // check whether each of our posts is liked by the current user. We use dispatch groups to wait for all of the asynchronous code to complete before calling our completion handler on the main thread. Now each post that is returned with our posts(for:completion:) service method will have data on whether the current user has liked it or not.
     static func posts(for user: User, completion: @escaping ([Post]) -> Void) {
         let ref = Database.database().reference().child("posts").child(user.uid)
         
@@ -49,9 +50,31 @@ struct UserService {
                 return completion([])
             }
             
-            let posts = snapshot.reversed().flatMap(Post.init)
-            completion(posts)
+            let dispatchGroup = DispatchGroup()
+            
+            let posts: [Post] =
+                snapshot
+                    .reversed()
+                    .flatMap {
+                        guard let post = Post(snapshot: $0)
+                            else { return nil }
+                        
+                        dispatchGroup.enter()
+                        
+                        LikeService.isPostLiked(post) { (isLiked) in
+                            post.isLiked = isLiked
+                            
+                            dispatchGroup.leave()
+                        }
+                        
+                        return post
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(posts)
+            })
         })
-    }    
+    }
     
+
 }
