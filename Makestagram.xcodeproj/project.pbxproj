@@ -18,6 +18,8 @@
 		064955B81EFD7A0100168D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064955B61EFD7A0100168D54 /* Main.storyboard */; };
 		064955BF1EFD7C9F00168D54 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064955BE1EFD7C9F00168D54 /* Login.storyboard */; };
 		064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064955C01EFD7CF100168D54 /* LoginViewController.swift */; };
+		066A3EC31F0576C900507E3E /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066A3EC21F0576C900507E3E /* FindFriends.storyboard */; };
+		066A3EC51F0577CA00507E3E /* FindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A3EC41F0577CA00507E3E /* FindFriendsCell.swift */; };
 		0670A8071F01BAC1003494CB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A8061F01BAC1003494CB /* UserService.swift */; };
 		0670A8091F01D42A003494CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A8081F01D42A003494CB /* Constants.swift */; };
 		0670A80B1F01D4C0003494CB /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A80A1F01D4C0003494CB /* Storyboard+Utility.swift */; };
@@ -50,6 +52,8 @@
 		064955B91EFD7A0B00168D54 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
 		064955BE1EFD7C9F00168D54 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		064955C01EFD7CF100168D54 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		066A3EC21F0576C900507E3E /* FindFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FindFriends.storyboard; path = Storyboards/FindFriends.storyboard; sourceTree = "<group>"; };
+		066A3EC41F0577CA00507E3E /* FindFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindFriendsCell.swift; path = "Table View Cells/FindFriendsCell.swift"; sourceTree = "<group>"; };
 		0670A8061F01BAC1003494CB /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		0670A8081F01D42A003494CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Supporting/Constants.swift; sourceTree = "<group>"; };
 		0670A80A1F01D4C0003494CB /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				0670A8221F041B0D003494CB /* PostImageCell.swift */,
 				061EB09A1F04278100E2F3A9 /* PostHeaderCell.swift */,
 				061EB09C1F0428A700E2F3A9 /* PostActionCell.swift */,
+				066A3EC41F0577CA00507E3E /* FindFriendsCell.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				064955B61EFD7A0100168D54 /* Main.storyboard */,
+				066A3EC21F0576C900507E3E /* FindFriends.storyboard */,
 				0670A8201F040FAA003494CB /* Home.storyboard */,
 				064955BE1EFD7C9F00168D54 /* Login.storyboard */,
 			);
@@ -133,9 +139,9 @@
 			children = (
 				064955C01EFD7CF100168D54 /* LoginViewController.swift */,
 				060FEC4A1F01A0E4006826D1 /* CreateUsernameViewController.swift */,
-				0670A80F1F0215B3003494CB /* FindFriendsViewController.swift */,
 				0670A8111F02CA57003494CB /* MainTabBarController.swift */,
 				0670A80D1F0215A1003494CB /* HomeViewController.swift */,
+				0670A80F1F0215B3003494CB /* FindFriendsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				064955B71EFD7A0100168D54 /* LaunchScreen.storyboard in Resources */,
 				064955B21EFD798400168D54 /* GoogleService-Info.plist in Resources */,
 				0686DD3A1EFD77120027C234 /* Assets.xcassets in Resources */,
+				066A3EC31F0576C900507E3E /* FindFriends.storyboard in Resources */,
 				0670A8211F040FAA003494CB /* Home.storyboard in Resources */,
 				064955BF1EFD7C9F00168D54 /* Login.storyboard in Resources */,
 				064955B81EFD7A0100168D54 /* Main.storyboard in Resources */,
@@ -357,6 +364,7 @@
 				061EB09F1F04478800E2F3A9 /* LikeService.swift in Sources */,
 				0670A81B1F030B61003494CB /* Post.swift in Sources */,
 				0670A8231F041B0D003494CB /* PostImageCell.swift in Sources */,
+				066A3EC51F0577CA00507E3E /* FindFriendsCell.swift in Sources */,
 				0670A81D1F0310BC003494CB /* UIImage+Size.swift in Sources */,
 				0670A80E1F0215A1003494CB /* HomeViewController.swift in Sources */,
 				0670A8141F02D323003494CB /* MGPhotoHelper.swift in Sources */,

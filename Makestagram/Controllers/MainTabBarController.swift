@@ -21,6 +21,7 @@ class MainTabBarController: UITabBarController {
         
         delegate = self
         tabBar.unselectedItemTintColor = .black
+        
     }
 
     override func didReceiveMemoryWarning() {
