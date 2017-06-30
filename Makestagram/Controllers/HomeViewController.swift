@@ -14,16 +14,29 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     var posts = [Post]()
+    let refreshControl = UIRefreshControl()
 
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
         
-        UserService.posts(for: User.current) { (posts) in
+        configureTableView()
+        reloadTimeline()
+        
+        
+    }
+    
+    func reloadTimeline() {
+        UserService.timeline { (posts) in
             self.posts = posts
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            
             self.tableView.reloadData()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +50,10 @@ class HomeViewController: UIViewController {
         
         // remove separators from cells
         tableView.separatorStyle = .none
+        
+        // add pull to refresh
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     //convert a Date into a formatted string. We'll use this to display the date our post was created.
