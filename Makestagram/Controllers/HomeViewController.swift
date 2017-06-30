@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var posts = [Post]()
     let refreshControl = UIRefreshControl()
+    let paginationHelper = MGPaginationHelper<Post>(serviceMethod: UserService.timeline)
 
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -22,12 +23,10 @@ class HomeViewController: UIViewController {
         
         configureTableView()
         reloadTimeline()
-        
-        
     }
     
     func reloadTimeline() {
-        UserService.timeline { (posts) in
+        self.paginationHelper.reloadData(completion: { [unowned self] (posts) in
             self.posts = posts
             
             if self.refreshControl.isRefreshing {
@@ -35,8 +34,7 @@ class HomeViewController: UIViewController {
             }
             
             self.tableView.reloadData()
-        }
-        
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,25 +78,37 @@ extension HomeViewController: UITableViewDataSource {
         return posts.count
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section >= posts.count - 1 {
+            paginationHelper.paginate(completion: { [unowned self] (posts) in
+                self.posts.append(contentsOf: posts)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.section]
         
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell") as! PostHeaderCell
-            cell.usernameLabel.text = User.current.username
+            let cell: PostHeaderCell = tableView.dequeueReusableCell()
+            cell.usernameLabel.text = post.poster.username
             
             return cell
             
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostImageCell") as! PostImageCell
+            let cell: PostImageCell = tableView.dequeueReusableCell()
             let imageURL = URL(string: post.imageURL)
             cell.postImageView.kf.setImage(with: imageURL)
             
             return cell
             
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostActionCell") as! PostActionCell
+            let cell: PostActionCell = tableView.dequeueReusableCell()
             cell.delegate = self
             configureCell(cell, with: post)
             

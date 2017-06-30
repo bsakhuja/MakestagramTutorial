@@ -34,6 +34,9 @@
 		0670A81F1F031778003494CB /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A81E1F031778003494CB /* StorageReference+Post.swift */; };
 		0670A8211F040FAA003494CB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0670A8201F040FAA003494CB /* Home.storyboard */; };
 		0670A8231F041B0D003494CB /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670A8221F041B0D003494CB /* PostImageCell.swift */; };
+		0674216A1F06D32D00296870 /* DatabaseReference+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067421691F06D32D00296870 /* DatabaseReference+Location.swift */; };
+		0674216C1F06EED300296870 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674216B1F06EED300296870 /* UITableView+Utility.swift */; };
+		0674216E1F06F12700296870 /* MGPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674216D1F06F12700296870 /* MGPaginationHelper.swift */; };
 		0686DD331EFD77120027C234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686DD321EFD77120027C234 /* AppDelegate.swift */; };
 		0686DD3A1EFD77120027C234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0686DD391EFD77120027C234 /* Assets.xcassets */; };
 		473C51A0185262ED9DD4E47F /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320E1BB5B72748A9CEF4F23B /* Pods_Makestagram.framework */; };
@@ -68,6 +71,9 @@
 		0670A81E1F031778003494CB /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StorageReference+Post.swift"; path = "Extensions/StorageReference+Post.swift"; sourceTree = "<group>"; };
 		0670A8201F040FAA003494CB /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		0670A8221F041B0D003494CB /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImageCell.swift; path = Controllers/PostImageCell.swift; sourceTree = "<group>"; };
+		067421691F06D32D00296870 /* DatabaseReference+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DatabaseReference+Location.swift"; path = "Extensions/DatabaseReference+Location.swift"; sourceTree = "<group>"; };
+		0674216B1F06EED300296870 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Utility.swift"; path = "Extensions/UITableView+Utility.swift"; sourceTree = "<group>"; };
+		0674216D1F06F12700296870 /* MGPaginationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGPaginationHelper.swift; path = Helpers/MGPaginationHelper.swift; sourceTree = "<group>"; };
 		0686DD2F1EFD77120027C234 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0686DD321EFD77120027C234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0686DD391EFD77120027C234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +158,8 @@
 				0670A80A1F01D4C0003494CB /* Storyboard+Utility.swift */,
 				0670A81C1F0310BC003494CB /* UIImage+Size.swift */,
 				0670A81E1F031778003494CB /* StorageReference+Post.swift */,
+				067421691F06D32D00296870 /* DatabaseReference+Location.swift */,
+				0674216B1F06EED300296870 /* UITableView+Utility.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				0670A8131F02D323003494CB /* MGPhotoHelper.swift */,
+				0674216D1F06F12700296870 /* MGPaginationHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -358,18 +367,21 @@
 				0616473F1F01921800F75C0C /* User.swift in Sources */,
 				0670A8171F0304B8003494CB /* StorageService.swift in Sources */,
 				064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */,
+				0674216C1F06EED300296870 /* UITableView+Utility.swift in Sources */,
 				0670A8121F02CA57003494CB /* MainTabBarController.swift in Sources */,
 				0670A8071F01BAC1003494CB /* UserService.swift in Sources */,
 				061EB09D1F0428A700E2F3A9 /* PostActionCell.swift in Sources */,
 				061EB09F1F04478800E2F3A9 /* LikeService.swift in Sources */,
 				0670A81B1F030B61003494CB /* Post.swift in Sources */,
 				0670A8231F041B0D003494CB /* PostImageCell.swift in Sources */,
+				0674216E1F06F12700296870 /* MGPaginationHelper.swift in Sources */,
 				066A3EC51F0577CA00507E3E /* FindFriendsCell.swift in Sources */,
 				0670A81D1F0310BC003494CB /* UIImage+Size.swift in Sources */,
 				0670A80E1F0215A1003494CB /* HomeViewController.swift in Sources */,
 				0670A8141F02D323003494CB /* MGPhotoHelper.swift in Sources */,
 				0670A80B1F01D4C0003494CB /* Storyboard+Utility.swift in Sources */,
 				0670A8101F0215B3003494CB /* FindFriendsViewController.swift in Sources */,
+				0674216A1F06D32D00296870 /* DatabaseReference+Location.swift in Sources */,
 				0670A81F1F031778003494CB /* StorageReference+Post.swift in Sources */,
 				0670A8091F01D42A003494CB /* Constants.swift in Sources */,
 				0670A8191F03073D003494CB /* PostService.swift in Sources */,

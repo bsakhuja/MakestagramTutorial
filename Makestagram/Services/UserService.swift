@@ -43,8 +43,7 @@ struct UserService {
     // fetch and return all of our posts from Firebase from a given user
     // check whether each of our posts is liked by the current user. We use dispatch groups to wait for all of the asynchronous code to complete before calling our completion handler on the main thread. Now each post that is returned with our posts(for:completion:) service method will have data on whether the current user has liked it or not.
     static func posts(for user: User, completion: @escaping ([Post]) -> Void) {
-        let ref = Database.database().reference().child("posts").child(user.uid)
-        
+        let ref = DatabaseReference.toLocation(.posts(uid: user.uid))
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
@@ -127,11 +126,16 @@ struct UserService {
         })
     }
     
-    static func timeline(completion: @escaping ([Post]) -> Void) {
+    static func timeline(pageSize: UInt, lastPostKey: String? = nil, completion: @escaping ([Post]) -> Void) {
         let currentUser = User.current
         
-        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
-        timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        let ref = Database.database().reference().child("timeline").child(currentUser.uid)
+        var query = ref.queryOrderedByKey().queryLimited(toLast: pageSize)
+        if let lastPostKey = lastPostKey {
+            query = query.queryEnding(atValue: lastPostKey)
+        }
+        
+        query.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
             
