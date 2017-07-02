@@ -39,6 +39,22 @@
 		0674216E1F06F12700296870 /* MGPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674216D1F06F12700296870 /* MGPaginationHelper.swift */; };
 		0686DD331EFD77120027C234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686DD321EFD77120027C234 /* AppDelegate.swift */; };
 		0686DD3A1EFD77120027C234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0686DD391EFD77120027C234 /* Assets.xcassets */; };
+		068C762D1F080AC300516101 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C76231F080AC300516101 /* OpenSans-Bold.ttf */; };
+		068C762E1F080AC300516101 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C76241F080AC300516101 /* OpenSans-BoldItalic.ttf */; };
+		068C762F1F080AC300516101 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C76251F080AC300516101 /* OpenSans-ExtraBold.ttf */; };
+		068C76301F080AC300516101 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C76261F080AC300516101 /* OpenSans-ExtraBoldItalic.ttf */; };
+		068C76311F080AC300516101 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C76271F080AC300516101 /* OpenSans-Italic.ttf */; };
+		068C76321F080AC300516101 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C76281F080AC300516101 /* OpenSans-Light.ttf */; };
+		068C76331F080AC300516101 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C76291F080AC300516101 /* OpenSans-LightItalic.ttf */; };
+		068C76341F080AC300516101 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C762A1F080AC300516101 /* OpenSans-Regular.ttf */; };
+		068C76351F080AC300516101 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C762B1F080AC300516101 /* OpenSans-Semibold.ttf */; };
+		068C76361F080AC300516101 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068C762C1F080AC300516101 /* OpenSans-SemiboldItalic.ttf */; };
+		068C76381F080BFB00516101 /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C76371F080BFB00516101 /* UIColor+Utility.swift */; };
+		068C763A1F080D0900516101 /* UIFont+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C76391F080D0900516101 /* UIFont+Utility.swift */; };
+		068C763C1F087EFC00516101 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C763B1F087EFC00516101 /* ProfileViewController.swift */; };
+		068C763E1F0880A600516101 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068C763D1F0880A600516101 /* Profile.storyboard */; };
+		068C76401F08819100516101 /* PostThumbImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C763F1F08819100516101 /* PostThumbImageCell.swift */; };
+		068C76421F08844700516101 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C76411F08844700516101 /* ProfileHeaderView.swift */; };
 		473C51A0185262ED9DD4E47F /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320E1BB5B72748A9CEF4F23B /* Pods_Makestagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +93,22 @@
 		0686DD2F1EFD77120027C234 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0686DD321EFD77120027C234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0686DD391EFD77120027C234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		068C76231F080AC300516101 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Resources/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		068C76241F080AC300516101 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "Resources/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		068C76251F080AC300516101 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "Resources/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		068C76261F080AC300516101 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "Resources/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		068C76271F080AC300516101 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "Resources/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		068C76281F080AC300516101 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "Resources/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		068C76291F080AC300516101 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "Resources/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		068C762A1F080AC300516101 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Resources/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		068C762B1F080AC300516101 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "Resources/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		068C762C1F080AC300516101 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "Resources/OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		068C76371F080BFB00516101 /* UIColor+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Utility.swift"; path = "Extensions/UIColor+Utility.swift"; sourceTree = "<group>"; };
+		068C76391F080D0900516101 /* UIFont+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Utility.swift"; path = "Extensions/UIFont+Utility.swift"; sourceTree = "<group>"; };
+		068C763B1F087EFC00516101 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		068C763D1F0880A600516101 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = Storyboards/Profile.storyboard; sourceTree = "<group>"; };
+		068C763F1F08819100516101 /* PostThumbImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostThumbImageCell.swift; path = "Table View Cells/PostThumbImageCell.swift"; sourceTree = "<group>"; };
+		068C76411F08844700516101 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHeaderView.swift; path = "Table View Cells/ProfileHeaderView.swift"; sourceTree = "<group>"; };
 		320E1BB5B72748A9CEF4F23B /* Pods_Makestagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4590DE8DFCC825D250A6C6C7 /* Pods-Makestagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.release.xcconfig"; sourceTree = "<group>"; };
 		8C1C8DBFF57A4D377DEDEF49 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				064955B61EFD7A0100168D54 /* Main.storyboard */,
+				068C763D1F0880A600516101 /* Profile.storyboard */,
 				066A3EC21F0576C900507E3E /* FindFriends.storyboard */,
 				0670A8201F040FAA003494CB /* Home.storyboard */,
 				064955BE1EFD7C9F00168D54 /* Login.storyboard */,
@@ -148,6 +181,7 @@
 				0670A8111F02CA57003494CB /* MainTabBarController.swift */,
 				0670A80D1F0215A1003494CB /* HomeViewController.swift */,
 				0670A80F1F0215B3003494CB /* FindFriendsViewController.swift */,
+				068C763B1F087EFC00516101 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -160,6 +194,8 @@
 				0670A81E1F031778003494CB /* StorageReference+Post.swift */,
 				067421691F06D32D00296870 /* DatabaseReference+Location.swift */,
 				0674216B1F06EED300296870 /* UITableView+Utility.swift */,
+				068C76371F080BFB00516101 /* UIColor+Utility.swift */,
+				068C76391F080D0900516101 /* UIFont+Utility.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -178,6 +214,7 @@
 			children = (
 				0686DD311EFD77120027C234 /* Makestagram */,
 				064955BB1EFD7B5400168D54 /* Supporting Files */,
+				068C76221F080A7A00516101 /* Resources */,
 				0686DD301EFD77120027C234 /* Products */,
 				9288B22B3D2751369D7E6292 /* Pods */,
 				FD486880157DC2E92580E917 /* Frameworks */,
@@ -199,6 +236,7 @@
 				060FEC4E1F01B032006826D1 /* Services */,
 				064955BD1EFD7B6E00168D54 /* View Controllers */,
 				061EB0991F04273E00E2F3A9 /* Table View Cells */,
+				068C76431F08844F00516101 /* Collection Views */,
 				064955BC1EFD7B5E00168D54 /* Storyboards */,
 				0686DD391EFD77120027C234 /* Assets.xcassets */,
 				0670A8151F02D328003494CB /* Helpers */,
@@ -206,6 +244,33 @@
 				0670A80C1F01D4C6003494CB /* Extensions */,
 			);
 			path = Makestagram;
+			sourceTree = "<group>";
+		};
+		068C76221F080A7A00516101 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				068C76231F080AC300516101 /* OpenSans-Bold.ttf */,
+				068C76241F080AC300516101 /* OpenSans-BoldItalic.ttf */,
+				068C76251F080AC300516101 /* OpenSans-ExtraBold.ttf */,
+				068C76261F080AC300516101 /* OpenSans-ExtraBoldItalic.ttf */,
+				068C76271F080AC300516101 /* OpenSans-Italic.ttf */,
+				068C76281F080AC300516101 /* OpenSans-Light.ttf */,
+				068C76291F080AC300516101 /* OpenSans-LightItalic.ttf */,
+				068C762A1F080AC300516101 /* OpenSans-Regular.ttf */,
+				068C762B1F080AC300516101 /* OpenSans-Semibold.ttf */,
+				068C762C1F080AC300516101 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = Resources;
+			path = Makestagram;
+			sourceTree = "<group>";
+		};
+		068C76431F08844F00516101 /* Collection Views */ = {
+			isa = PBXGroup;
+			children = (
+				068C763F1F08819100516101 /* PostThumbImageCell.swift */,
+				068C76411F08844700516101 /* ProfileHeaderView.swift */,
+			);
+			name = "Collection Views";
 			sourceTree = "<group>";
 		};
 		06B88BBC1F0182B300EBBB90 /* Models */ = {
@@ -298,13 +363,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068C76321F080AC300516101 /* OpenSans-Light.ttf in Resources */,
 				064955B71EFD7A0100168D54 /* LaunchScreen.storyboard in Resources */,
+				068C76331F080AC300516101 /* OpenSans-LightItalic.ttf in Resources */,
 				064955B21EFD798400168D54 /* GoogleService-Info.plist in Resources */,
+				068C76351F080AC300516101 /* OpenSans-Semibold.ttf in Resources */,
+				068C76361F080AC300516101 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				068C763E1F0880A600516101 /* Profile.storyboard in Resources */,
+				068C762D1F080AC300516101 /* OpenSans-Bold.ttf in Resources */,
 				0686DD3A1EFD77120027C234 /* Assets.xcassets in Resources */,
 				066A3EC31F0576C900507E3E /* FindFriends.storyboard in Resources */,
 				0670A8211F040FAA003494CB /* Home.storyboard in Resources */,
+				068C762E1F080AC300516101 /* OpenSans-BoldItalic.ttf in Resources */,
 				064955BF1EFD7C9F00168D54 /* Login.storyboard in Resources */,
+				068C76341F080AC300516101 /* OpenSans-Regular.ttf in Resources */,
 				064955B81EFD7A0100168D54 /* Main.storyboard in Resources */,
+				068C76311F080AC300516101 /* OpenSans-Italic.ttf in Resources */,
+				068C76301F080AC300516101 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				068C762F1F080AC300516101 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,10 +441,12 @@
 			files = (
 				061EB0A11F05698300E2F3A9 /* FollowService.swift in Sources */,
 				0616473F1F01921800F75C0C /* User.swift in Sources */,
+				068C76381F080BFB00516101 /* UIColor+Utility.swift in Sources */,
 				0670A8171F0304B8003494CB /* StorageService.swift in Sources */,
 				064955C11EFD7CF100168D54 /* LoginViewController.swift in Sources */,
 				0674216C1F06EED300296870 /* UITableView+Utility.swift in Sources */,
 				0670A8121F02CA57003494CB /* MainTabBarController.swift in Sources */,
+				068C76421F08844700516101 /* ProfileHeaderView.swift in Sources */,
 				0670A8071F01BAC1003494CB /* UserService.swift in Sources */,
 				061EB09D1F0428A700E2F3A9 /* PostActionCell.swift in Sources */,
 				061EB09F1F04478800E2F3A9 /* LikeService.swift in Sources */,
@@ -376,9 +454,12 @@
 				0670A8231F041B0D003494CB /* PostImageCell.swift in Sources */,
 				0674216E1F06F12700296870 /* MGPaginationHelper.swift in Sources */,
 				066A3EC51F0577CA00507E3E /* FindFriendsCell.swift in Sources */,
+				068C76401F08819100516101 /* PostThumbImageCell.swift in Sources */,
 				0670A81D1F0310BC003494CB /* UIImage+Size.swift in Sources */,
+				068C763A1F080D0900516101 /* UIFont+Utility.swift in Sources */,
 				0670A80E1F0215A1003494CB /* HomeViewController.swift in Sources */,
 				0670A8141F02D323003494CB /* MGPhotoHelper.swift in Sources */,
+				068C763C1F087EFC00516101 /* ProfileViewController.swift in Sources */,
 				0670A80B1F01D4C0003494CB /* Storyboard+Utility.swift in Sources */,
 				0670A8101F0215B3003494CB /* FindFriendsViewController.swift in Sources */,
 				0674216A1F06D32D00296870 /* DatabaseReference+Location.swift in Sources */,

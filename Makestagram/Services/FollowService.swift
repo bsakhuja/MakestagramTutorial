@@ -12,46 +12,67 @@ import FirebaseDatabase
 struct FollowService {
     // current user follows user
     private static func followUser(_ user: User, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
-        // We create a dictionary to update multiple locations at the same time. We set the appropriate key-value for our followers and following.
         let currentUID = User.current.uid
         let followData = ["followers/\(user.uid)/\(currentUID)" : true,
                           "following/\(currentUID)/\(user.uid)" : true]
         
-        
-        // get relative path to database
         let ref = Database.database().reference()
-        // We write our new relationship to Firebase.
         ref.updateChildValues(followData) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 success(false)
             }
             
+            // create a dispatch group to manage the completion of asynchronous requests.
+            let dispatchGroup = DispatchGroup()
             
-            // get all posts for the user. We can reuse the service method that we previously used to display all of our posts.
+            // Each time we make a request, we call dispatchGroup.enter(). For this instance, we'll tracking the completion of incrementing the following_count.
+            dispatchGroup.enter()
+            
+            // create a reference to the location of the following_count that we want to increment and use transaction operations to increment the count.
+            let followingCountRef = Database.database().reference().child("users").child(currentUID).child("following_count")
+            followingCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                // Boilerplate logic for incrementing a count using Firebase transaction blocks
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount + 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            })
+            
+            // repeat previous 3 steps for the current user's follower_count.
+            dispatchGroup.enter()
+            let followerCountRef = Database.database().reference().child("users").child(user.uid).child("follower_count")
+            followerCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount + 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            })
+            
+            // original logic to add each of the user's post to the current user's timeline is modified to make use of the Dispatch Group.
+            dispatchGroup.enter()
             UserService.posts(for: user) { (posts) in
-                // get all of the post keys for that user's posts. This will allow us to write each post to our own timeline.
                 let postKeys = posts.flatMap { $0.key }
                 
-                // build a multiple location update using a dictionary that adds each of the followee's post to our timeline.
                 var followData = [String : Any]()
                 let timelinePostDict = ["poster_uid" : user.uid]
                 postKeys.forEach { followData["timeline/\(currentUID)/\($0)"] = timelinePostDict }
                 
-                // write the dictionary to our database.
                 ref.updateChildValues(followData, withCompletionBlock: { (error, ref) in
                     if let error = error {
                         assertionFailure(error.localizedDescription)
                     }
                     
-                    // return success based on whether we received an error.
-                    success(error == nil)
+                    dispatchGroup.leave()
                 })
             }
+            
+            // move the success callback to be executed after all three previous requests have been completed
+            dispatchGroup.notify(queue: .main) {
+                success(true)
+            }
         }
-        
     }
-    
 
     
     // current user unfollows user
@@ -69,6 +90,27 @@ struct FollowService {
                 return success(false)
             }
             
+            let dispatchGroup = DispatchGroup()
+            
+            dispatchGroup.enter()
+            let followingCountRef = Database.database().reference().child("users").child(currentUID).child("following_count")
+            followingCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount - 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            })
+            
+            dispatchGroup.enter()
+            let followerCountRef = Database.database().reference().child("users").child(user.uid).child("follower_count")
+            followerCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount - 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            })
+            
+            dispatchGroup.enter()
             UserService.posts(for: user, completion: { (posts) in
                 var unfollowData = [String : Any]()
                 let postsKeys = posts.flatMap { $0.key }
@@ -82,9 +124,13 @@ struct FollowService {
                         assertionFailure(error.localizedDescription)
                     }
                     
-                    success(error == nil)
+                    dispatchGroup.leave()
                 })
             })
+            
+            dispatchGroup.notify(queue: .main) {
+                success(true)
+            }
         }
     }
     

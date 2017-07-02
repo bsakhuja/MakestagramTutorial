@@ -14,7 +14,10 @@ import FirebaseAuth.FIRUser
 // Here we remove the networking-related code of creating a new user in our CreateUsernameViewController and place it inside our service struct. The service struct will act as an intermediary for communicating between our app and Firebase.
 struct UserService {
     static func create(_ firUser: FIRUser, username: String, completion: @escaping (User?) -> Void) {
-        let userAttrs = ["username": username]
+        let userAttrs: [String : Any] = ["username": username,
+                                         "follower_count": 0,
+                                         "following_count" : 0,
+                                         "post_count" : 0]
         
         let ref = Database.database().reference().child("users").child(firUser.uid)
         ref.setValue(userAttrs) { (error, ref) in
@@ -164,7 +167,26 @@ struct UserService {
             })
         })
     }
-    
+   
+    // service method to retrieve data to provide content for a given user's profile. We'll return the user object and all of the user's posts from Firebase.
+    static func observeProfile(for user: User, completion: @escaping (DatabaseReference, User?, [Post]) -> Void) -> DatabaseHandle {
+        // Create a reference to the location we want to read the user object from.
+        let userRef = Database.database().reference().child("users").child(user.uid)
+        
+        // Observer the DatabaseReference to retrieve the user object.
+        return userRef.observe(.value, with: { snapshot in
+            // Check that the data returned is a valid user. If not, return an empty completion block.
+            guard let user = User(snapshot: snapshot) else {
+                return completion(userRef, nil, [])
+            }
+            
+            // Retrieve all posts for the respective user.
+            posts(for: user, completion: { posts in
+                // Return the completion block with a reference to the DatabaseReference, user, and posts if successful.
+                completion(userRef, user, posts)
+            })
+        })
+    }
     
     
 }
